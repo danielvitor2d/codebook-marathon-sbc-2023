@@ -78,7 +78,7 @@ vector<i64> scalarProduct(vector<int> t, vector<int> p, bool isCyclic=false) {
     for (int i=nt; i<nt+np; ++i)
       t[i] = t[i%nt];
   vector<i64> ans = multiply(t, p);
-  for (int i = 0; i < nt; ++i)
+  for (int i = 0; i < nt; ++i) // nt-np+1 if compare with substring
     ans[i] = ans[np-1+i];
   ans.resize(nt);
   return ans;
