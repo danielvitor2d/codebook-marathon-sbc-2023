@@ -38,12 +38,10 @@ template<typename T> struct rmq {
 struct SuffixArray {
   vector<int> SA, LCP;
   string s;
-
   SuffixArray (const string &s): s(s) {
     SA = suffix_array_construction(s);
     LCP = lcp_construction(s, SA);
   }
-
   vector<int> sort_cyclic_shifts(const string& s) {
     int n = s.size();
     const int alphabet = 256;
@@ -115,11 +113,9 @@ struct SuffixArray {
     }
     return lcp;
   }
-
   vector<int> getSA() {
     return SA;
   }
-
   vector<int> getLCP() {
     return LCP;
   }
@@ -132,6 +128,8 @@ vector<int> sa, lcp;
 // https://codeforces.com/edu/course/2/lesson/2/5/practice/contest/269656/problem/D
 i64 f(i64 k) { return k*(k+1)/2; }
 
+// dah pra fazer small to large
+// p é a profundidade da posição atual na suffix tree
 i64 dfs(int L, int R, int p) { // dfs na suffix tree chamado em pre ordem
   int ext = L != R ? RMQ.query(L, R-1) : n - sa[L];
 
