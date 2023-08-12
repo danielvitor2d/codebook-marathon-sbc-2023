@@ -122,6 +122,3 @@ vector<bool> stringMatchingWithWildcards(string t, string p){
   }
   return result;
 }
-int main() {
-
-}

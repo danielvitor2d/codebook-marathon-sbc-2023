@@ -133,6 +133,3 @@ i64 maxFlowWithScaling(int n, vector<tp> edges, int s, int t) {
   }
   return ans;
 }
-int main() {
-
-}
