@@ -34,7 +34,7 @@ struct Kuhn {
   int matching() {
     int ans = 0, c = 1;
     for (auto& v: adj) 
-      shuffle(v.begin(), v.end(), rng);
+      shuffle(v.begin(), v.end(), rng); // se o grafo pode ser esparso
     while (c) {
       for (int j = 0; j < nb; j++) 
         vis[na+j] = 0;
@@ -42,6 +42,21 @@ struct Kuhn {
       for (int i = 0; i < na; i++)
         if (ma[i] == -1 and dfs(i))
           ans++, c = 1;
+    }
+    return ans;
+  }
+  int matching2() {
+    int ans = 0, aux = true;
+    while (aux) {
+      for (int j=0; j<nb; ++j) vis[na+j] = false;
+      aux = false;
+      for (int i=0; i<na; ++i) {
+        if (ma[i] != -1) continue;
+        if (dfs(i)) {
+          ++ans;
+          aux = true;
+        }
+      }
     }
     return ans;
   }

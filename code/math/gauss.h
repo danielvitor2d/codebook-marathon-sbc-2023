@@ -3,7 +3,6 @@
 typedef long double ld;
 const ld EPS = 1e-9;
 const int INF = 0x3f3f3f3f;
-
 template<typename T>
 struct Matrix {
   std::vector<std::vector<T>> mat;
@@ -13,16 +12,13 @@ struct Matrix {
       mat[i][i] = 1;
   }
 };
-
 // Gaussian elimination with partial pivot (avoids propagation of rounding errors)
 int gaussianElimination(Matrix<ld> a, Matrix<ld> &ans) {
 	int n = (int)a.mat.size();
 	int m = (int)a.mat[0].size()-1;
 	std::vector<int> end(m, -1);
-
 	for (int col = 0, row = 0; col < m and row < n; ++col) {
 		int l = row;
-
 		// Which row has largest column value
 		for (int i = row; i < n; ++i)
 			if (std::abs(a.mat[i][col]) > std::abs(a.mat[l][col]))
@@ -42,7 +38,6 @@ int gaussianElimination(Matrix<ld> a, Matrix<ld> &ans) {
 		}
 		++row;
 	}
-
 	// Substitution phase
 	for (int i = 0; i < m; ++i)
 		if (end[i] != -1)
@@ -55,10 +50,8 @@ int gaussianElimination(Matrix<ld> a, Matrix<ld> &ans) {
 		if (std::abs(sum - a.mat[i][m]) > EPS)
 			return 0; // No solution
 	}
-
 	for (int i = 0; i < m; ++i)
 		if (end[i] == -1)
 			return INF; // Infinite solutions
-
 	return 1; // One solution
 }
