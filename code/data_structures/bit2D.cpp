@@ -12,22 +12,20 @@ namespace BIT2DRangeQuery {
     int BIT[MAXN][MAXM];
 
     int query(int idx, int idy) {
+        int sum = 0;
 	    for (int x {idx}; x > 0; x -= x & -x) {
 		    for (int y {idy}; y > 0; y -= y & -y) {
 			    // Query logic	
+                sum ^= BIT[x][y];
 		    }
 	    }
-    }
-
-    int range_query(int ix, int iy, int ex, int ey) {
-	    // Do the query for (xe, ye) and remove the excess if needed with the queries
-	    // (ex, iy - 1), (ix - 1, ey) and then add (ix - 1, iy - 1)
     }
 
     void update(int idx, int idy, int k) {
 	    for (int x {idx}; x <= n; x += x & -x) {
 		    for (int y {idy}; y <= m; y += y & -y) {
 			    // Update logic
+                BIT[x][y] ^= k;
 		    }
 	    }
     }
