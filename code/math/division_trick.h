@@ -26,3 +26,9 @@ pll divisionTrick(ll n){
   }
   return pll(ans1, ans2);
 }
+void division_trick(int n) {
+  for (int i = 1, la; i <= n; i = la + 1) {
+    la = n / (n / i);
+    //n / x yields the same value for i <= x <= la.
+  }
+}
