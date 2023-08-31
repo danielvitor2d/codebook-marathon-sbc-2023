@@ -8,7 +8,7 @@ i64 C1(int n, int k) {
     ans = (ans * (n - k + 1)) / i;
   return ans;
 }
-//O(n²)
+//O(n^2)
 vector<vector<i64>> C2(int maxn, int mod) {
   vector<vector<i64>> mat(maxn+1, vector<i64>(maxn+1, 0));
   mat[0][0] = 1;

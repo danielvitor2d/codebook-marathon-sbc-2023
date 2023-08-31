@@ -4,7 +4,7 @@ using namespace std;
 /*
 Cuidado ao subtrair de unsigned
 Trocar %MOD por += MOD ou -= MOD
-Cuidado com caracteres como #, $, @
+Cuidado com caracteres como hashtag, cifrao, arroba
 /*
 
 /*

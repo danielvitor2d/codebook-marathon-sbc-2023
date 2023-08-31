@@ -129,7 +129,7 @@ vector<int> sa, lcp;
 i64 f(i64 k) { return k*(k+1)/2; }
 
 // dah pra fazer small to large
-// p é a profundidade da posição atual na suffix tree
+// p eh a profundidade da posicao atual na suffix tree
 i64 dfs(int L, int R, int p) { // dfs na suffix tree chamado em pre ordem
   int ext = L != R ? RMQ.query(L, R-1) : n - sa[L];
 

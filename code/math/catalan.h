@@ -12,7 +12,7 @@ The number of non-isomorphic full binary trees with n internal nodes (i.e. nodes
 The number of monotonic lattice paths from point (0, 0) to point (n, n) in a square lattice of size n*n, which do not pass above the main diagonal (i.e. connecting (0, 0) to (n, n)).
 Number of permutations of length n that can be stack sorted (i.e. it can be shown that the rearrangement is stack sorted if and only if there is no such index i < j < k, such that a_k < a_i < a_j).
 The number of non-crossing partitions of a set of n elements.
-The number of ways to cover the ladder 1..n  using n rectangles (The ladder consists of n columns, where i-th column has a height i).
+The number of ways to cover the ladder 1..n using n rectangles (The ladder consists of n columns, where i-th column has a height i).
 */
 i64 inv(i64 a){
   i64 inv_x, y;

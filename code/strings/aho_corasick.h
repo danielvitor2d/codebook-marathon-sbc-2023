@@ -3,9 +3,9 @@
 using namespace std;
 
 /*
-	Complexidade: O(mk), one k é o tamanho do alfabeto e m eh o numero de strings. Mudar de map pra array caso k for muito grande
+	Complexidade: O(mk), onde k eh o tamanho do alfabeto e m eh o numero de strings. Mudar de map pra array caso k for muito grande
 
-	Aplicações, de acordo com o cp-algorithms:
+	aplicacoes, de acordo com o cp-algorithms:
 
 	- Find all strings from a given set in a text (acha o numero de ocorrencias de cada string)
 	- Finding the lexicographical smallest string of a given length that doesn't match any given strings
@@ -66,7 +66,7 @@ struct AhoCorasick {
 				if(aho[j].ch.count(c)) j = aho[j].ch[c];
 			}
 
-			// Se descomentado, guarda a quantidade de strings que são sufixo da string representada por esse no
+			// Se descomentado, guarda a quantidade de strings que sao sufixo da string representada por esse no
 			// aho[cur].cnt = aho[cur].end + aho[aho[cur].suf].cnt;
 
 			for(auto & [c, v] : aho[cur].ch) {
